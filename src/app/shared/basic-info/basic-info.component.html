@@ -1,0 +1,39 @@
+<div class="left-block">
+  <div class="profile-info">
+    <div class="avatar">
+      <img [src]="profileInfo.avatar_url" [alt]="profileInfo.login">
+    </div>
+    <h2 class="username">{{profileInfo.login}}</h2>
+    <h4 class="name">{{profileInfo.name}}</h4>
+    <p class="bio">{{profileInfo.bio}}</p>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+        <span class="label-value" *ngIf="profileInfo.followers !== undefined">
+            <span class="label">Followers:</span>
+            <span class="value">{{profileInfo.followers}}</span>
+        </span>
+        <span class="label-value" *ngIf="profileInfo.following !== undefined">
+            <span class="label">Following:</span>
+            <span class="value">{{profileInfo.following}}</span>
+        </span>
+    </div>
+    <div fxLayout="row" *ngIf="profileInfo.location">
+        <span class="label-value">
+            <span class="label">Location:</span>
+            <span class="value">{{profileInfo.location}}</span>
+        </span>
+    </div>
+    <div fxLayout="row" *ngIf="profileInfo.email">
+        <span class="label-value">
+            <span class="label">Email:</span>
+            <span class="value">{{profileInfo.email}}</span>
+        </span>
+    </div>
+    <div fxLayout="row" *ngIf="profileInfo.blog">
+        <span class="label-value">
+            <span class="label">Blog:</span>
+            <span class="value">{{profileInfo.blog}}</span>
+        </span>
+    </div>
+  </div>
+</div>

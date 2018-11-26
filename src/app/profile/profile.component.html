@@ -1,0 +1,46 @@
+<div fxFlexFill fxLayout="column">
+  <app-header></app-header>
+  <div fxLayout="row" class="content-container fill">
+    <app-basic-info fxFlex="20%"></app-basic-info>
+    <div fxFlex="77%" fxFlexOffset="3%" fxLayout="row" fxLayoutAlign="center center">
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <div *ngIf="!loading" fxLayout="column" class="right-block fill">
+        <div fxLayout="row" fxLayoutAlign="center center" class="header">
+          <button mat-icon-button [routerLink]="['/home']" class="align-left">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <h3 class="page-title">Repositories</h3>
+        </div>
+        <div class="repo-list fill" fxLayout="row" fxLayoutAlign="start start" fxLayoutWrap>
+          <mat-card fxFlex="20%" *ngFor="let repo of repositories">
+            <mat-card-header>
+              <mat-card-title>
+                <a [href]="repo.html_url" target="_blank">{{repo.name}}</a>
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <span>{{repo.language}}</span>
+            </mat-card-content>
+            <mat-card-footer fxLayout="row" fxLayoutAlign="start end">
+              <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon aria-label="Stars">star</mat-icon>
+                <span>{{repo.stargazers_count}}</span>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon aria-label="Forks">device_hub</mat-icon>
+                <span>{{repo.forks_count}}</span>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon aria-label="Watchers">remove_red_eye</mat-icon>
+                <span>{{repo.watchers_count}}</span>
+              </div>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+        <mat-divider></mat-divider>
+        <app-stats-chart></app-stats-chart>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,7 @@
+<mat-card *ngIf="message">
+  <mat-toolbar [color]="message.type === 'success' ? 'primary' : message.type === 'error' ? 'warn' : 'accent'">
+    <mat-toolbar-row>
+      <span>{{message.text}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</mat-card>

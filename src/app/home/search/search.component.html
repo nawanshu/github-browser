@@ -1,0 +1,24 @@
+<div fxLayout="column" class="right-block fill">
+  <mat-form-field>
+    <input matInput placeholder="Search Profile" #input type="text" name="searchText" (keyup)="onSearch(input.value)">
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutAlign="center center" class="profile-list fill">
+    <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+    <div fxLayout="row" fxLayoutWrap class="fill" *ngIf="!loading">
+      <mat-card fxFlex="20%" *ngFor="let item of profile" (click)="onProfileClick(item)">
+        <mat-card-header>
+          <mat-card-title>{{item.login}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img [src]="item.avatar_url" [alt]="item.login">
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <span class="label">Score:</span>
+              <span>{{item.score}}</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

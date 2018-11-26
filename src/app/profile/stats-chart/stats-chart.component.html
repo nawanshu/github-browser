@@ -1,0 +1,13 @@
+<div fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="center center" class="header">
+    <mat-form-field class="align-right">
+      <mat-select [(ngModel)]="selectedRepo" placeholder="Select Repository (Last 7 days data only)" (change)="onSelect($event)">
+        <mat-option *ngFor="let repo of repos" [value]="repo">
+          {{ repo.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h3 class="page-title">Repo Statistics</h3>
+  </div>
+  <nvd3 [options]="options" [data]="data"></nvd3>
+</div>

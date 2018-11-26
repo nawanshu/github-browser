@@ -1,0 +1,16 @@
+<mat-card fxLayout="row" fxLayoutAlign="space-between center">
+  <h2 (click) = "onHeader()">Github Browser</h2>
+  <div class="user-menu">
+    <button mat-button [matMenuTriggerFor]="userMenu" class="user-menu-trigger">
+      <img [src]="currentUser.avatar_url" [alt]="currentUser.login">
+      <span>{{currentUser.login}}</span>
+    </button>
+    <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+      <span [routerLink]="['/home']" mat-menu-item *ngIf="currentUser.name">{{currentUser.name}}</span>
+      <button mat-menu-item [routerLink]="['/signin']">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-card>

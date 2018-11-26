@@ -1,0 +1,21 @@
+.profile-info {}
+.avatar img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.username {
+    margin-bottom: 5px;
+}
+.name {
+    margin-bottom: 10px;
+}
+mat-divider {
+    margin: 10px 0;
+}
+
+.label-value {
+    padding: 0 10px;
+}
+.label-value .label {
+    font-weight: bold;
+}
