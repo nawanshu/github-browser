@@ -34,12 +34,7 @@ Use the --aot flag for Ahead of Time compilation.
 Run ng test to execute the unit tests via Karma.
 
 ## Application Monitoring
-Using Google Analytics for monitoring this application. You can login to [Google Analytics](https://analytics.google.com/analytics/web/). <br/>
-Admin Email Address: githubbrowseradm@gmail.com <br/>
-Admin Password: admingithub@123
-
-## Architecture Design Document
-Additional architecture document available at [https://gitlab.com/nawanshu/githubbrowser/tree/master/Documentation](https://gitlab.com/nawanshu/githubbrowser/tree/master/Documentation)
+Using Google Analytics for monitoring this application.
 
 ## Further help
 To get more help on the Angular CLI use ng help or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
